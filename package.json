@@ -1,0 +1,35 @@
+{
+  "name": "vue.pnpm",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "web:dev": "pnpm run --filter web dev",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.{json,html,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.2",
+    "vue-eslint-parser": "^9.1.0"
+  }
+}
